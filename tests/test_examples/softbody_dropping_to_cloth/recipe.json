@@ -1,0 +1,39 @@
+{
+  "schema": "newton-cli/recipe/v1",
+  "ops": [
+    {"op": "add_ground_plane"},
+    {"op": "add_soft_grid", "args": {
+      "pos": [0.0, 0.0, 2.0],
+      "rot": [0.0, 0.0, 0.0, 1.0],
+      "vel": [0.0, 0.0, 0.0],
+      "dim_x": 6, "dim_y": 6, "dim_z": 3,
+      "cell_x": 0.1, "cell_y": 0.1, "cell_z": 0.1,
+      "density": 1000.0,
+      "k_mu": 100000.0,
+      "k_lambda": 100000.0,
+      "k_damp": 0.001
+    }},
+    {"op": "add_cloth_grid", "args": {
+      "pos": [-1.0, -1.0, 1.0],
+      "rot": [0.0, 0.0, 0.0, 1.0],
+      "vel": [0.0, 0.0, 0.0],
+      "fix_left": true,
+      "fix_right": true,
+      "dim_x": 40, "dim_y": 40,
+      "cell_x": 0.05, "cell_y": 0.05,
+      "mass": 0.0005,
+      "tri_ke": 100000.0,
+      "tri_ka": 100000.0,
+      "tri_kd": 0.00001,
+      "edge_ke": 0.01,
+      "edge_kd": 0.01,
+      "particle_radius": 0.05
+    }},
+    {"op": "color"}
+  ],
+  "post_finalize": {
+    "soft_contact_ke": 100000.0,
+    "soft_contact_kd": 0.00001,
+    "soft_contact_mu": 1.0
+  }
+}

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 200" width="820" height="200">
+  <title>newton-cli banner</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#76B900"/>
+      <stop offset="100%" stop-color="#4A7A00"/>
+    </linearGradient>
+  </defs>
+  <rect width="820" height="200" rx="12" fill="url(#bg)"/>
+  <!-- Terminal bracket -->
+  <text x="40" y="128" font-family="monospace" font-size="80" font-weight="bold" fill="#76B900">&#x276F;</text>
+  <!-- Project name -->
+  <text x="120" y="115" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="700" fill="#f0f6fc">newton</text>
+  <text x="370" y="115" font-family="monospace" font-size="56" font-weight="400" fill="#76B900">-cli</text>
+  <!-- Tagline -->
+  <text x="120" y="155" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#8b949e">Agent-native CLI for NVIDIA Newton physics &mdash; JSON in, physics out.</text>
+  <!-- Falling particles (physics motif) -->
+  <circle cx="660" cy="40" r="6" fill="#76B900" opacity="0.8"/>
+  <circle cx="690" cy="60" r="4" fill="#76B900" opacity="0.6"/>
+  <circle cx="720" cy="50" r="5" fill="#76B900" opacity="0.7"/>
+  <circle cx="670" cy="80" r="3" fill="#76B900" opacity="0.5"/>
+  <circle cx="740" cy="75" r="7" fill="#76B900" opacity="0.4"/>
+  <circle cx="710" cy="100" r="4" fill="#76B900" opacity="0.6"/>
+  <circle cx="750" cy="110" r="5" fill="#76B900" opacity="0.3"/>
+  <circle cx="680" cy="120" r="3" fill="#76B900" opacity="0.5"/>
+  <!-- Ground line -->
+  <line x1="640" y1="150" x2="780" y2="150" stroke="#76B900" stroke-width="2" opacity="0.3"/>
+  <!-- Resting particles -->
+  <circle cx="665" cy="146" r="4" fill="#76B900" opacity="0.7"/>
+  <circle cx="695" cy="146" r="5" fill="#76B900" opacity="0.6"/>
+  <circle cx="720" cy="146" r="3" fill="#76B900" opacity="0.8"/>
+  <circle cx="745" cy="146" r="6" fill="#76B900" opacity="0.5"/>
+</svg>

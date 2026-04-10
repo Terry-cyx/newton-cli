@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" width="720" height="340">
+  <title>newton-cli architecture: two routes</title>
+  <style>
+    text { font-family: system-ui, -apple-system, sans-serif; }
+    .label { font-size: 13px; fill: #c9d1d9; }
+    .title { font-size: 15px; fill: #f0f6fc; font-weight: 600; }
+    .note  { font-size: 11px; fill: #8b949e; }
+    .box   { rx: 8; ry: 8; stroke-width: 1.5; }
+    .arrow { stroke-width: 1.5; fill: none; marker-end: url(#arrowhead); }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#8b949e"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="720" height="340" rx="12" fill="#0d1117"/>
+
+  <!-- Agent -->
+  <rect x="20" y="135" width="110" height="50" class="box" fill="#1f2937" stroke="#76B900"/>
+  <text x="75" y="165" text-anchor="middle" class="title" fill="#76B900">AI Agent</text>
+
+  <!-- Route A -->
+  <rect x="180" y="30" width="160" height="50" class="box" fill="#1f2937" stroke="#3b82f6"/>
+  <text x="260" y="52" text-anchor="middle" class="title" fill="#3b82f6">Route A</text>
+  <text x="260" y="70" text-anchor="middle" class="note">recipe.json (declarative)</text>
+
+  <!-- Route B -->
+  <rect x="180" y="240" width="160" height="50" class="box" fill="#1f2937" stroke="#f59e0b"/>
+  <text x="260" y="262" text-anchor="middle" class="title" fill="#f59e0b">Route B</text>
+  <text x="260" y="280" text-anchor="middle" class="note">run-script (Python escape)</text>
+
+  <!-- CLI commands A -->
+  <rect x="390" y="10" width="190" height="90" class="box" fill="#161b22" stroke="#30363d"/>
+  <text x="485" y="32" text-anchor="middle" class="label">model build --recipe</text>
+  <text x="485" y="52" text-anchor="middle" class="label">sim run --solver --out</text>
+  <text x="485" y="72" text-anchor="middle" class="label">viewer render --out</text>
+  <text x="485" y="92" text-anchor="middle" class="note">25 examples (pure JSON)</text>
+
+  <!-- CLI commands B -->
+  <rect x="390" y="230" width="190" height="70" class="box" fill="#161b22" stroke="#30363d"/>
+  <text x="485" y="255" text-anchor="middle" class="label">run-script script.py</text>
+  <text x="485" y="275" text-anchor="middle" class="label">--artifact-dir --timeout</text>
+  <text x="485" y="293" text-anchor="middle" class="note">33 examples (per-step Python)</text>
+
+  <!-- Newton engine -->
+  <rect x="620" y="110" width="80" height="100" class="box" fill="#1f2937" stroke="#76B900"/>
+  <text x="660" y="145" text-anchor="middle" class="title" fill="#76B900">Newton</text>
+  <text x="660" y="165" text-anchor="middle" class="note">GPU</text>
+  <text x="660" y="180" text-anchor="middle" class="note">physics</text>
+  <text x="660" y="195" text-anchor="middle" class="note">engine</text>
+
+  <!-- Output -->
+  <rect x="570" y="270" width="130" height="50" class="box" fill="#161b22" stroke="#30363d"/>
+  <text x="635" y="292" text-anchor="middle" class="label">state.npz + render.png</text>
+  <text x="635" y="312" text-anchor="middle" class="note">--json envelope on stdout</text>
+
+  <!-- Arrows -->
+  <path d="M130,150 L175,55" class="arrow" stroke="#3b82f6"/>
+  <path d="M130,170 L175,265" class="arrow" stroke="#f59e0b"/>
+  <path d="M340,55 L385,55" class="arrow" stroke="#8b949e"/>
+  <path d="M340,265 L385,265" class="arrow" stroke="#8b949e"/>
+  <path d="M580,55 L620,140" class="arrow" stroke="#8b949e"/>
+  <path d="M580,265 L620,190" class="arrow" stroke="#8b949e"/>
+  <path d="M660,210 L635,265" class="arrow" stroke="#8b949e"/>
+
+  <!-- Count badge -->
+  <rect x="280" y="130" width="100" height="26" rx="13" fill="#238636"/>
+  <text x="330" y="148" text-anchor="middle" font-size="13" font-weight="600" fill="#fff">58 / 65</text>
+</svg>

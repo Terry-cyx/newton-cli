@@ -1,0 +1,41 @@
+{
+  "schema": "newton-cli/recipe/v1",
+  "ops": [
+    {"op": "add_ground_plane"},
+    {"op": "add_body", "args": {
+      "xform": {"p": [0.0, -2.0, 2.0], "q": [0.0, 0.0, 0.0, 1.0]},
+      "label": "sphere"
+    }},
+    {"op": "add_shape_sphere", "args": {"body": 0, "radius": 0.5}},
+
+    {"op": "add_body", "args": {
+      "xform": {"p": [0.0, -6.0, 2.0], "q": [0.0, 0.0, 0.0, 1.0]},
+      "label": "ellipsoid"
+    }},
+    {"op": "add_shape_ellipsoid", "args": {"body": 1, "rx": 0.5, "ry": 0.5, "rz": 0.25}},
+
+    {"op": "add_body", "args": {
+      "xform": {"p": [0.0, 0.0, 2.0], "q": [0.0, 0.0, 0.0, 1.0]},
+      "label": "capsule"
+    }},
+    {"op": "add_shape_capsule", "args": {"body": 2, "radius": 0.3, "half_height": 0.7}},
+
+    {"op": "add_body", "args": {
+      "xform": {"p": [0.0, -4.0, 2.0], "q": [0.0, 0.0, 0.0, 1.0]},
+      "label": "cylinder"
+    }},
+    {"op": "add_shape_cylinder", "args": {"body": 3, "radius": 0.4, "half_height": 0.6}},
+
+    {"op": "add_body", "args": {
+      "xform": {"p": [0.0, 2.0, 2.0], "q": [0.0, 0.0, 0.0, 1.0]},
+      "label": "box"
+    }},
+    {"op": "add_shape_box", "args": {"body": 4, "hx": 0.5, "hy": 0.35, "hz": 0.25}},
+
+    {"op": "add_body", "args": {
+      "xform": {"p": [0.0, 6.0, 2.0], "q": [0.0, 0.0, 0.0, 1.0]},
+      "label": "cone"
+    }},
+    {"op": "add_shape_cone", "args": {"body": 5, "radius": 0.45, "half_height": 0.6}}
+  ]
+}

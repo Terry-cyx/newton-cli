@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
+  <title>newton-cli logo</title>
+  <!-- Apple (Newton reference) as a minimal geometric icon -->
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#76B900"/>
+      <stop offset="100%" stop-color="#4A7A00"/>
+    </linearGradient>
+  </defs>
+  <!-- Terminal prompt bracket -->
+  <text x="8" y="68" font-family="monospace" font-size="64" font-weight="bold" fill="#333">&#x276F;</text>
+  <!-- Falling apple (physics) -->
+  <circle cx="72" cy="28" r="14" fill="url(#g1)"/>
+  <path d="M72 14 Q76 6 82 10" stroke="#4A7A00" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Dotted trajectory -->
+  <line x1="72" y1="44" x2="72" y2="78" stroke="#76B900" stroke-width="2" stroke-dasharray="4 4" opacity="0.5"/>
+</svg>

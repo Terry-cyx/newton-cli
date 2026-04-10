@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "newton-cli"
+version = "0.0.1"
+description = "Agent-native CLI wrapper for NVIDIA Newton physics engine"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+dependencies = [
+    "newton",
+]
+
+[project.optional-dependencies]
+sim = ["newton[sim]"]
+importers = ["newton[importers]"]
+examples = ["newton[examples]"]
+dev = []
+
+[project.scripts]
+newton-cli = "newton_cli.cli:main"
+
+# src layout: the package lives at src/newton_cli/, which hatchling discovers
+# automatically via this `packages` setting.
+[tool.hatch.build.targets.wheel]
+packages = ["src/newton_cli"]
+
+# Newton source is vendored at the repo root as a sibling of this project.
+[tool.uv.sources]
+newton = { path = "../newton", editable = true }

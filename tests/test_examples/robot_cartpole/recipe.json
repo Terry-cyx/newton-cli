@@ -1,0 +1,65 @@
+{
+  "schema": "newton-cli/recipe/v1",
+  "ops": [
+    {
+      "op": "replicate",
+      "args": {
+        "count": 4,
+        "recipe": {
+          "schema": "newton-cli/recipe/v1",
+          "ops": [
+            {
+              "op": "register_mujoco_custom_attributes"
+            },
+            {
+              "op": "set_default_shape_cfg",
+              "args": {
+                "density": 100.0
+              }
+            },
+            {
+              "op": "set_default_joint_cfg",
+              "args": {
+                "armature": 0.1
+              }
+            },
+            {
+              "op": "add_usd",
+              "args": {
+                "source": "E:\\newton-cli\\newton\\newton\\examples\\assets\\cartpole.usda",
+                "enable_self_collisions": false,
+                "collapse_fixed_joints": true
+              }
+            },
+            {
+              "op": "apply_body_inertia_diagonal",
+              "args": {
+                "value": 0.1
+              }
+            },
+            {
+              "op": "set_builder_array",
+              "args": {
+                "name": "joint_q",
+                "slice": [
+                  -3,
+                  null
+                ],
+                "values": [
+                  0.0,
+                  0.3,
+                  0.0
+                ]
+              }
+            }
+          ]
+        },
+        "spacing": [
+          1.0,
+          2.0,
+          0.0
+        ]
+      }
+    }
+  ]
+}

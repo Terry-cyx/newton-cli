@@ -1,0 +1,107 @@
+{
+  "schema": "newton-cli/recipe/v1",
+  "ops": [
+    {
+      "op": "replicate",
+      "args": {
+        "count": 2,
+        "recipe": {
+          "schema": "newton-cli/recipe/v1",
+          "ops": [
+            {
+              "op": "register_mujoco_custom_attributes"
+            },
+            {
+              "op": "set_default_joint_cfg",
+              "args": {
+                "limit_ke": 1000.0,
+                "limit_kd": 10.0,
+                "friction": 1e-05
+              }
+            },
+            {
+              "op": "set_default_shape_cfg",
+              "args": {
+                "ke": 2000.0,
+                "kd": 100.0,
+                "kf": 1000.0,
+                "mu": 0.75
+              }
+            },
+            {
+              "op": "add_usd",
+              "args": {
+                "source": "C:\\Users\\Administrator\\AppData\\Local\\newton-physics\\newton\\Cache\\newton-assets_anybotics_anymal_d_c1f3c929_8e8df07d\\anybotics_anymal_d\\usd\\anymal_d.usda",
+                "collapse_fixed_joints": false,
+                "enable_self_collisions": false,
+                "hide_collision_shapes": true
+              }
+            },
+            {
+              "op": "set_builder_array",
+              "args": {
+                "name": "joint_q",
+                "slice": [
+                  0,
+                  3
+                ],
+                "values": [
+                  0.0,
+                  0.0,
+                  0.62
+                ]
+              }
+            },
+            {
+              "op": "set_builder_array",
+              "args": {
+                "name": "joint_q",
+                "slice": [
+                  3,
+                  7
+                ],
+                "values": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "op": "set_builder_array",
+              "args": {
+                "name": "joint_target_ke",
+                "fill": 150.0
+              }
+            },
+            {
+              "op": "set_builder_array",
+              "args": {
+                "name": "joint_target_kd",
+                "fill": 5.0
+              }
+            },
+            {
+              "op": "set_builder_array",
+              "args": {
+                "name": "joint_target_mode",
+                "fill": 1
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "op": "set_default_shape_cfg",
+      "args": {
+        "ke": 1000.0,
+        "kd": 100.0
+      }
+    },
+    {
+      "op": "add_ground_plane"
+    }
+  ]
+}

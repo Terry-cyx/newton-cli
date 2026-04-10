@@ -1,0 +1,25 @@
+{
+  "schema": "newton-cli/recipe/v1",
+  "ops": [
+    {"op": "register_solver_custom_attributes", "args": {"solver": "SolverImplicitMPM"}},
+    {"op": "add_particle_grid", "args": {
+      "pos": [-1.0, -1.0, 1.5],
+      "rot": [0.0, 0.0, 0.0, 1.0],
+      "vel": [0.0, 0.0, 0.0],
+      "dim_x": 61, "dim_y": 61, "dim_z": 61,
+      "cell_x": 0.0333333, "cell_y": 0.0333333, "cell_z": 0.0333333,
+      "mass": 0.0370370,
+      "jitter": 0.0333333,
+      "radius_mean": 0.0166667
+    }},
+    {"op": "add_shape_box", "args": {
+      "body": -1,
+      "cfg": {"$shape_cfg": {"mu": 0.1}},
+      "xform": {"p": [0.75, 0.0, 0.8], "q": [0.0, 0.0, 0.0, 1.0]},
+      "hx": 0.5, "hy": 2.0, "hz": 0.8
+    }},
+    {"op": "add_ground_plane", "args": {
+      "cfg": {"$shape_cfg": {"mu": 0.5}}
+    }}
+  ]
+}

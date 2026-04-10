@@ -1,0 +1,40 @@
+{
+  "schema": "newton-cli/recipe/v1",
+  "ops": [
+    {"op": "add_ground_plane"},
+    {"op": "add_soft_grid", "args": {
+      "pos": [0.0, 1.0, 1.0], "rot": [0.0, 0.0, 0.0, 1.0], "vel": [0.0, 0.0, 0.0],
+      "dim_x": 12, "dim_y": 4, "dim_z": 4,
+      "cell_x": 0.1, "cell_y": 0.1, "cell_z": 0.1,
+      "density": 1000.0, "k_mu": 100000.0, "k_lambda": 100000.0, "k_damp": 0.1,
+      "fix_left": true
+    }},
+    {"op": "add_soft_grid", "args": {
+      "pos": [0.0, 1.6, 1.0], "rot": [0.0, 0.0, 0.0, 1.0], "vel": [0.0, 0.0, 0.0],
+      "dim_x": 12, "dim_y": 4, "dim_z": 4,
+      "cell_x": 0.1, "cell_y": 0.1, "cell_z": 0.1,
+      "density": 1000.0, "k_mu": 100000.0, "k_lambda": 100000.0, "k_damp": 0.01,
+      "fix_left": true
+    }},
+    {"op": "add_soft_grid", "args": {
+      "pos": [0.0, 2.2, 1.0], "rot": [0.0, 0.0, 0.0, 1.0], "vel": [0.0, 0.0, 0.0],
+      "dim_x": 12, "dim_y": 4, "dim_z": 4,
+      "cell_x": 0.1, "cell_y": 0.1, "cell_z": 0.1,
+      "density": 1000.0, "k_mu": 100000.0, "k_lambda": 100000.0, "k_damp": 0.001,
+      "fix_left": true
+    }},
+    {"op": "add_soft_grid", "args": {
+      "pos": [0.0, 2.8, 1.0], "rot": [0.0, 0.0, 0.0, 1.0], "vel": [0.0, 0.0, 0.0],
+      "dim_x": 12, "dim_y": 4, "dim_z": 4,
+      "cell_x": 0.1, "cell_y": 0.1, "cell_z": 0.1,
+      "density": 1000.0, "k_mu": 100000.0, "k_lambda": 100000.0, "k_damp": 0.0001,
+      "fix_left": true
+    }},
+    {"op": "color"}
+  ],
+  "post_finalize": {
+    "soft_contact_ke": 100.0,
+    "soft_contact_kd": 0.0,
+    "soft_contact_mu": 1.0
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "schema": "newton-cli/recipe/v1",
+  "ops": [
+    {
+      "op": "replicate",
+      "args": {
+        "count": 4,
+        "recipe": {
+          "schema": "newton-cli/recipe/v1",
+          "ops": [
+            {
+              "op": "register_mujoco_custom_attributes"
+            },
+            {
+              "op": "add_mjcf",
+              "args": {
+                "source": "E:\\newton-cli\\newton\\newton\\examples\\assets\\nv_humanoid.xml",
+                "ignore_names": [
+                  "floor",
+                  "ground"
+                ],
+                "xform": {
+                  "p": [
+                    0.0,
+                    0.0,
+                    1.5
+                  ],
+                  "q": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "op": "add_ground_plane"
+    }
+  ]
+}

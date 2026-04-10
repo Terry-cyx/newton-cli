@@ -1,0 +1,17 @@
+{
+  "schema": "newton-cli/recipe/v1",
+  "ops": [
+    {"op": "register_solver_custom_attributes", "args": {"solver": "SolverImplicitMPM"}},
+    {"op": "add_particle_grid", "args": {
+      "pos": [-0.5, -0.5, 0.0],
+      "rot": [0.0, 0.0, 0.0, 1.0],
+      "vel": [0.0, 0.0, 0.0],
+      "dim_x": 31, "dim_y": 31, "dim_z": 61,
+      "cell_x": 0.0333333, "cell_y": 0.0333333, "cell_z": 0.0333333,
+      "mass": 0.0925926,
+      "jitter": 0.0333333,
+      "radius_mean": 0.0166667
+    }},
+    {"op": "add_ground_plane", "args": {}}
+  ]
+}

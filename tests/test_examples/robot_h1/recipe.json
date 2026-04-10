@@ -1,0 +1,77 @@
+{
+  "schema": "newton-cli/recipe/v1",
+  "ops": [
+    {
+      "op": "replicate",
+      "args": {
+        "count": 2,
+        "recipe": {
+          "schema": "newton-cli/recipe/v1",
+          "ops": [
+            {
+              "op": "register_mujoco_custom_attributes"
+            },
+            {
+              "op": "set_default_joint_cfg",
+              "args": {
+                "limit_ke": 1000.0,
+                "limit_kd": 10.0,
+                "friction": 1e-05
+              }
+            },
+            {
+              "op": "set_default_shape_cfg",
+              "args": {
+                "ke": 2000.0,
+                "kd": 100.0,
+                "kf": 1000.0,
+                "mu": 0.75
+              }
+            },
+            {
+              "op": "add_usd",
+              "args": {
+                "source": "C:\\Users\\Administrator\\AppData\\Local\\newton-physics\\newton\\Cache\\newton-assets_unitree_h1_ec724452_8e8df07d\\unitree_h1\\usd_structured\\h1.usda",
+                "ignore_paths": [
+                  "/GroundPlane"
+                ],
+                "enable_self_collisions": false
+              }
+            },
+            {
+              "op": "set_builder_array",
+              "args": {
+                "name": "joint_target_ke",
+                "fill": 150.0
+              }
+            },
+            {
+              "op": "set_builder_array",
+              "args": {
+                "name": "joint_target_kd",
+                "fill": 5.0
+              }
+            },
+            {
+              "op": "set_builder_array",
+              "args": {
+                "name": "joint_target_mode",
+                "fill": 1
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "op": "set_default_shape_cfg",
+      "args": {
+        "ke": 1000.0,
+        "kd": 100.0
+      }
+    },
+    {
+      "op": "add_ground_plane"
+    }
+  ]
+}
