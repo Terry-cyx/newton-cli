@@ -1,6 +1,8 @@
 <div align="center">
 
-<img src="assets/banner.svg" alt="newton-cli banner" width="820">
+<img src="assets/banner.svg" alt="" width="820">
+
+<h1>newton-cli</h1>
 
 **AI 에이전트가 JSON으로 GPU 물리 시뮬레이션을 구동합니다 — Python이 필요 없습니다.**<br>
 **Python이 필요한 경우, `run-script`가 구조화된 출력으로 래핑합니다.**
@@ -40,7 +42,7 @@
 </tr>
 <tr>
 <td align="center"><img src="assets/render_cable_pile.png" width="260"><br><sub>40개 케이블 안착 (VBD)</sub></td>
-<td align="center"><img src="assets/render_nut_bolt_hydro.png" width="260"><br><sub>너트 및 볼트 SDF 접촉</sub></td>
+<td align="center"><img src="assets/render_pyramid.png" width="260"><br><sub>피라미드 쌓기 (접촉)</sub></td>
 <td align="center"><img src="assets/render_basic_urdf.png" width="260"><br><sub>4대의 ANYmal 사족보행 로봇 (URDF)</sub></td>
 </tr>
 </table>
@@ -217,7 +219,6 @@ newton_cli/
 ├── pyproject.toml              # hatchling 빌드, newton 경로 의존성
 ├── README.md                   # 영문 README
 ├── CLAUDE.md                   # 에이전트 통합 계약
-├── PLAN.md                     # TDD 로드맵 (예제 기반 명세)
 ├── assets/                     # README용 SVG/PNG
 ├── src/newton_cli/
 │   ├── cli.py                  # argparse 디스패처 (10개 서브커맨드)
@@ -255,7 +256,7 @@ cd tests/test_examples/cable_twist
 powershell -ExecutionPolicy Bypass -File ./run.ps1
 ```
 
-전체 개발 가이드는 [CLAUDE.md](CLAUDE.md)를, 웨이브별 TDD 로드맵은 [PLAN.md](PLAN.md)를 참조하십시오.
+전체 개발 가이드 및 에이전트 통합 계약은 [CLAUDE.md](CLAUDE.md)를 참조하십시오.
 
 ---
 

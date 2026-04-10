@@ -1,71 +1,64 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" width="720" height="340">
-  <title>newton-cli architecture: two routes</title>
-  <style>
-    text { font-family: system-ui, -apple-system, sans-serif; }
-    .label { font-size: 13px; fill: #c9d1d9; }
-    .title { font-size: 15px; fill: #f0f6fc; font-weight: 600; }
-    .note  { font-size: 11px; fill: #8b949e; }
-    .box   { rx: 8; ry: 8; stroke-width: 1.5; }
-    .arrow { stroke-width: 1.5; fill: none; marker-end: url(#arrowhead); }
-  </style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 280" width="760" height="280">
+  <title>newton-cli architecture</title>
   <defs>
-    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+    <marker id="ah" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
       <path d="M0,0 L8,3 L0,6" fill="#8b949e"/>
     </marker>
   </defs>
+  <rect width="760" height="280" rx="10" fill="#0d1117"/>
 
-  <!-- Background -->
-  <rect width="720" height="340" rx="12" fill="#0d1117"/>
+  <!-- Row 1: Agent -->
+  <rect x="30" y="30" width="130" height="44" rx="8" fill="#1f2937" stroke="#76B900" stroke-width="1.5"/>
+  <text x="95" y="57" text-anchor="middle" font-family="monospace" font-size="14" font-weight="bold" fill="#76B900">AI Agent</text>
 
-  <!-- Agent -->
-  <rect x="20" y="135" width="110" height="50" class="box" fill="#1f2937" stroke="#76B900"/>
-  <text x="75" y="165" text-anchor="middle" class="title" fill="#76B900">AI Agent</text>
+  <!-- Arrow down to Route A -->
+  <line x1="95" y1="74" x2="95" y2="100" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ah)"/>
 
+  <!-- Row 2: Two routes side by side -->
   <!-- Route A -->
-  <rect x="180" y="30" width="160" height="50" class="box" fill="#1f2937" stroke="#3b82f6"/>
-  <text x="260" y="52" text-anchor="middle" class="title" fill="#3b82f6">Route A</text>
-  <text x="260" y="70" text-anchor="middle" class="note">recipe.json (declarative)</text>
+  <rect x="30" y="105" width="220" height="60" rx="8" fill="#1f2937" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="140" y="128" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#3b82f6">Route A: recipe.json</text>
+  <text x="140" y="148" text-anchor="middle" font-family="monospace" font-size="11" fill="#8b949e">model build + sim run + render</text>
+  <text x="140" y="160" text-anchor="middle" font-family="monospace" font-size="10" fill="#3b82f6">25 examples</text>
 
   <!-- Route B -->
-  <rect x="180" y="240" width="160" height="50" class="box" fill="#1f2937" stroke="#f59e0b"/>
-  <text x="260" y="262" text-anchor="middle" class="title" fill="#f59e0b">Route B</text>
-  <text x="260" y="280" text-anchor="middle" class="note">run-script (Python escape)</text>
+  <rect x="280" y="105" width="220" height="60" rx="8" fill="#1f2937" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="390" y="128" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#f59e0b">Route B: run-script</text>
+  <text x="390" y="148" text-anchor="middle" font-family="monospace" font-size="11" fill="#8b949e">subprocess + artifacts</text>
+  <text x="390" y="160" text-anchor="middle" font-family="monospace" font-size="10" fill="#f59e0b">33 examples</text>
 
-  <!-- CLI commands A -->
-  <rect x="390" y="10" width="190" height="90" class="box" fill="#161b22" stroke="#30363d"/>
-  <text x="485" y="32" text-anchor="middle" class="label">model build --recipe</text>
-  <text x="485" y="52" text-anchor="middle" class="label">sim run --solver --out</text>
-  <text x="485" y="72" text-anchor="middle" class="label">viewer render --out</text>
-  <text x="485" y="92" text-anchor="middle" class="note">25 examples (pure JSON)</text>
+  <!-- Arrow Agent to Route B -->
+  <path d="M160,52 L390,52 L390,100" fill="none" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ah)"/>
 
-  <!-- CLI commands B -->
-  <rect x="390" y="230" width="190" height="70" class="box" fill="#161b22" stroke="#30363d"/>
-  <text x="485" y="255" text-anchor="middle" class="label">run-script script.py</text>
-  <text x="485" y="275" text-anchor="middle" class="label">--artifact-dir --timeout</text>
-  <text x="485" y="293" text-anchor="middle" class="note">33 examples (per-step Python)</text>
+  <!-- Row 3: Newton engine (centered) -->
+  <rect x="530" y="105" width="200" height="60" rx="8" fill="#1f2937" stroke="#76B900" stroke-width="1.5"/>
+  <text x="630" y="128" text-anchor="middle" font-family="monospace" font-size="14" font-weight="bold" fill="#76B900">NVIDIA Newton</text>
+  <text x="630" y="148" text-anchor="middle" font-family="monospace" font-size="11" fill="#8b949e">GPU physics (Warp)</text>
+  <text x="630" y="160" text-anchor="middle" font-family="monospace" font-size="10" fill="#76B900">7 solvers</text>
 
-  <!-- Newton engine -->
-  <rect x="620" y="110" width="80" height="100" class="box" fill="#1f2937" stroke="#76B900"/>
-  <text x="660" y="145" text-anchor="middle" class="title" fill="#76B900">Newton</text>
-  <text x="660" y="165" text-anchor="middle" class="note">GPU</text>
-  <text x="660" y="180" text-anchor="middle" class="note">physics</text>
-  <text x="660" y="195" text-anchor="middle" class="note">engine</text>
+  <!-- Arrows routes -> Newton -->
+  <line x1="250" y1="135" x2="525" y2="135" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="500" y1="135" x2="525" y2="135" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ah)"/>
 
-  <!-- Output -->
-  <rect x="570" y="270" width="130" height="50" class="box" fill="#161b22" stroke="#30363d"/>
-  <text x="635" y="292" text-anchor="middle" class="label">state.npz + render.png</text>
-  <text x="635" y="312" text-anchor="middle" class="note">--json envelope on stdout</text>
+  <!-- Row 4: Outputs -->
+  <rect x="30" y="200" width="160" height="50" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="110" y="222" text-anchor="middle" font-family="monospace" font-size="12" fill="#c9d1d9">state.npz</text>
+  <text x="110" y="240" text-anchor="middle" font-family="monospace" font-size="10" fill="#8b949e">body_q, particle_q, ...</text>
 
-  <!-- Arrows -->
-  <path d="M130,150 L175,55" class="arrow" stroke="#3b82f6"/>
-  <path d="M130,170 L175,265" class="arrow" stroke="#f59e0b"/>
-  <path d="M340,55 L385,55" class="arrow" stroke="#8b949e"/>
-  <path d="M340,265 L385,265" class="arrow" stroke="#8b949e"/>
-  <path d="M580,55 L620,140" class="arrow" stroke="#8b949e"/>
-  <path d="M580,265 L620,190" class="arrow" stroke="#8b949e"/>
-  <path d="M660,210 L635,265" class="arrow" stroke="#8b949e"/>
+  <rect x="210" y="200" width="160" height="50" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="290" y="222" text-anchor="middle" font-family="monospace" font-size="12" fill="#c9d1d9">render.png</text>
+  <text x="290" y="240" text-anchor="middle" font-family="monospace" font-size="10" fill="#8b949e">headless OpenGL</text>
 
-  <!-- Count badge -->
-  <rect x="280" y="130" width="100" height="26" rx="13" fill="#238636"/>
-  <text x="330" y="148" text-anchor="middle" font-size="13" font-weight="600" fill="#fff">58 / 65</text>
+  <rect x="390" y="200" width="160" height="50" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="470" y="222" text-anchor="middle" font-family="monospace" font-size="12" fill="#c9d1d9">--json stdout</text>
+  <text x="470" y="240" text-anchor="middle" font-family="monospace" font-size="10" fill="#8b949e">structured envelope</text>
+
+  <!-- Arrow Newton -> outputs -->
+  <path d="M630,165 L630,185 L290,185 L290,195" fill="none" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="110" y1="185" x2="110" y2="195" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="470" y1="185" x2="470" y2="195" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ah)"/>
+
+  <!-- 58/65 badge -->
+  <rect x="600" y="210" width="120" height="30" rx="15" fill="#238636"/>
+  <text x="660" y="230" text-anchor="middle" font-family="monospace" font-size="14" font-weight="bold" fill="#fff">58 / 65</text>
 </svg>

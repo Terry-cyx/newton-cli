@@ -17,3 +17,7 @@ tests/test_examples/_shared/tests/
 tests/test_examples/mpm_viscous/recipe.json
 tests/test_examples/nut_bolt_hydro/recipe.json
 tests/test_examples/nut_bolt_sdf/recipe.json
+
+# Internal planning/dev docs (not for public repo)
+PLAN.md
+logs/

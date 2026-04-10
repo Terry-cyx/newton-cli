@@ -1,6 +1,8 @@
 <div align="center">
 
-<img src="assets/banner.svg" alt="newton-cli banner" width="820">
+<img src="assets/banner.svg" alt="" width="820">
+
+<h1>newton-cli</h1>
 
 **Let AI agents drive GPU physics simulations with JSON — no Python required.**<br>
 **When Python is needed, `run-script` wraps it with structured output.**
@@ -40,7 +42,7 @@ Every image below was rendered by `newton-cli viewer render` — the same headle
 </tr>
 <tr>
 <td align="center"><img src="assets/render_cable_pile.png" width="260"><br><sub>40 cables settling (VBD)</sub></td>
-<td align="center"><img src="assets/render_nut_bolt_hydro.png" width="260"><br><sub>Nut & bolt SDF contacts</sub></td>
+<td align="center"><img src="assets/render_pyramid.png" width="260"><br><sub>Pyramid stacking (contacts)</sub></td>
 <td align="center"><img src="assets/render_basic_urdf.png" width="260"><br><sub>4 ANYmal quadrupeds (URDF)</sub></td>
 </tr>
 </table>
@@ -217,7 +219,6 @@ newton_cli/
 ├── pyproject.toml              # hatchling build, newton path dep
 ├── README.md                   # this file
 ├── CLAUDE.md                   # agent integration contract
-├── PLAN.md                     # TDD roadmap (examples-as-spec)
 ├── assets/                     # SVG/PNG for README
 ├── src/newton_cli/
 │   ├── cli.py                  # argparse dispatcher (10 subcommands)
@@ -255,7 +256,7 @@ cd tests/test_examples/cable_twist
 powershell -ExecutionPolicy Bypass -File ./run.ps1
 ```
 
-See [CLAUDE.md](CLAUDE.md) for the full development guide and [PLAN.md](PLAN.md) for the wave-by-wave TDD roadmap.
+See [CLAUDE.md](CLAUDE.md) for the full development guide and agent integration contract.
 
 ---
 

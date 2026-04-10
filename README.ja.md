@@ -1,6 +1,8 @@
 <div align="center">
 
-<img src="assets/banner.svg" alt="newton-cli banner" width="820">
+<img src="assets/banner.svg" alt="" width="820">
+
+<h1>newton-cli</h1>
 
 **AIエージェントがJSONでGPU物理シミュレーションを駆動します — Pythonは不要です。**<br>
 **Pythonが必要な場合は、`run-script` が構造化出力でラップします。**
@@ -40,7 +42,7 @@
 </tr>
 <tr>
 <td align="center"><img src="assets/render_cable_pile.png" width="260"><br><sub>40本のケーブル沈降 (VBD)</sub></td>
-<td align="center"><img src="assets/render_nut_bolt_hydro.png" width="260"><br><sub>ナットとボルトのSDF接触</sub></td>
+<td align="center"><img src="assets/render_pyramid.png" width="260"><br><sub>ピラミッド積み上げ（接触）</sub></td>
 <td align="center"><img src="assets/render_basic_urdf.png" width="260"><br><sub>4体のANYmal四足歩行ロボット (URDF)</sub></td>
 </tr>
 </table>
@@ -217,7 +219,6 @@ newton_cli/
 ├── pyproject.toml              # hatchlingビルド、newtonパス依存
 ├── README.md                   # 英語版README
 ├── CLAUDE.md                   # エージェント統合仕様
-├── PLAN.md                     # TDDロードマップ（サンプルをSpecとして使用）
 ├── assets/                     # README用のSVG/PNG
 ├── src/newton_cli/
 │   ├── cli.py                  # argparseディスパッチャー（10サブコマンド）
@@ -255,7 +256,7 @@ cd tests/test_examples/cable_twist
 powershell -ExecutionPolicy Bypass -File ./run.ps1
 ```
 
-完全な開発ガイドは [CLAUDE.md](CLAUDE.md) を、ウェーブ別のTDDロードマップは [PLAN.md](PLAN.md) をご覧ください。
+完全な開発ガイドとエージェント統合契約は [CLAUDE.md](CLAUDE.md) をご覧ください。
 
 ---
 

@@ -1,6 +1,8 @@
 <div align="center">
 
-<img src="assets/banner.svg" alt="newton-cli banner" width="820">
+<img src="assets/banner.svg" alt="" width="820">
+
+<h1>newton-cli</h1>
 
 **让 AI agent 用 JSON 驱动 GPU 物理仿真 —— 无需编写 Python。**<br>
 **需要 Python 时，`run-script` 以结构化输出包装执行。**
@@ -40,7 +42,7 @@
 </tr>
 <tr>
 <td align="center"><img src="assets/render_cable_pile.png" width="260"><br><sub>40 根缆绳堆叠 (VBD)</sub></td>
-<td align="center"><img src="assets/render_nut_bolt_hydro.png" width="260"><br><sub>螺栓螺母 SDF 接触</sub></td>
+<td align="center"><img src="assets/render_pyramid.png" width="260"><br><sub>方块金字塔堆叠（接触）</sub></td>
 <td align="center"><img src="assets/render_basic_urdf.png" width="260"><br><sub>4 台 ANYmal 四足机器人 (URDF)</sub></td>
 </tr>
 </table>
@@ -217,7 +219,6 @@ newton_cli/
 ├── README.md                   # 英文 README
 ├── README.zh-CN.md             # 本文件
 ├── CLAUDE.md                   # agent 集成契约
-├── PLAN.md                     # TDD 路线图（示例即规范）
 ├── assets/                     # SVG/PNG 资源
 ├── src/newton_cli/
 │   ├── cli.py                  # argparse 分发器（10 个子命令）
@@ -255,7 +256,7 @@ cd tests/test_examples/cable_twist
 powershell -ExecutionPolicy Bypass -File ./run.ps1
 ```
 
-完整开发指南见 [CLAUDE.md](CLAUDE.md)，TDD 路线图见 [PLAN.md](PLAN.md)。
+完整开发指南和 agent 集成契约见 [CLAUDE.md](CLAUDE.md)。
 
 ---
 
